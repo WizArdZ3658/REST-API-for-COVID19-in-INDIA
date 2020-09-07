@@ -1,16 +1,28 @@
 from .views import \
-    Reload, \
     AgeGroupDetailsListAPIView, \
     ICMRTestingLabsListAPIView, \
     IndiaCensusListAPIView, \
     Covid19IndiaListAPIView, \
     HospitalBedsListAPIView, \
     IndividualDetailsListAPIView, \
-    TestingDetailsListAPIView
+    TestingDetailsListAPIView, \
+    ReloadAgeGroupDetails, \
+    ReloadCovid19India, \
+    ReloadHospitalBeds, \
+    ReloadICMRTestingLabs, \
+    ReloadIndiaCensus, \
+    ReloadIndividualDetails, \
+    ReloadTestingDetails
 from django.urls import path
 
 urlpatterns = [
-    path('reload/', Reload, name="reload"),
+    path('reload/agegrp/', ReloadAgeGroupDetails, name="reload_agegrp"),
+    path('reload/testinglabs/', ReloadICMRTestingLabs, name="reload_testing_labs"),
+    path('reload/census/', ReloadIndiaCensus, name="reload_census"),
+    path('reload/covid19india/', ReloadCovid19India, name="reload_covid19_india"),
+    path('reload/hospitals/', ReloadHospitalBeds, name="reload_hospitals"),
+    path('reload/individualdetails/', ReloadIndividualDetails, name="reload_indi_details"),
+    path('reload/statetesting/', ReloadTestingDetails, name="reload_testing_details"),
     path('agegrp/', AgeGroupDetailsListAPIView.as_view(), name="age_grp_details_list"),
     path('testinglabs/', ICMRTestingLabsListAPIView.as_view(), name="testing_lab_details_list"),
     path('census/', IndiaCensusListAPIView.as_view(), name="india_census"),

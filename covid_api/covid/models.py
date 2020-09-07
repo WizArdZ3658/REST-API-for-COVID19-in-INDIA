@@ -3,7 +3,7 @@ from django.db import models
 
 # Create your models here.
 
-# this is perfect
+
 class AgeGroupDetails(models.Model):
     agegrp = models.CharField(max_length=20)
     totalcases = models.IntegerField(default=0)
@@ -13,7 +13,6 @@ class AgeGroupDetails(models.Model):
         return self.agegrp
 
 
-# this is perfect
 class HospitalBeds(models.Model):
     StateUT = models.CharField(max_length=50)
     NumPrimaryHealthCenters = models.IntegerField(default=0)
@@ -24,9 +23,10 @@ class HospitalBeds(models.Model):
     NumPublicBeds = models.IntegerField(default=0)
     NumRuralHospitals = models.IntegerField(default=0)
     NumRuralBeds = models.IntegerField(default=0)
+    NumUrbanHospitals = models.IntegerField(default=0)
+    NumUrbanBeds = models.IntegerField(default=0)
 
 
-# this is perfect
 class ICMRTestingLabs(models.Model):
     lab = models.CharField(max_length=200)
     address = models.CharField(max_length=200)
@@ -36,7 +36,7 @@ class ICMRTestingLabs(models.Model):
     type = models.CharField(max_length=50)
 
 
-# this is perfect
+# there are some missing data
 class IndividualDetails(models.Model):
     government_id = models.CharField(max_length=50)
     diagnosed_date = models.DateField()
@@ -47,9 +47,10 @@ class IndividualDetails(models.Model):
     StateUT = models.CharField(max_length=50)
     nationality = models.CharField(max_length=50)
     current_status = models.CharField(max_length=50)
+    notes = models.CharField(max_length=200)
 
 
-# this is perfect
+# there are some missing data
 class TestingDetails(models.Model):
     Date = models.DateField()
     StateUT = models.CharField(max_length=50)
@@ -58,18 +59,16 @@ class TestingDetails(models.Model):
     Positive = models.IntegerField(default=0)
 
 
+# there are some missing data
 class Covid19India(models.Model):
     Date = models.DateField()
     Time = models.TimeField()
     StateUT = models.CharField(max_length=50)
-    ConfirmedIndianNational = models.CharField(max_length=10)
-    ConfirmedForeignNational = models.CharField(max_length=10)
     Cured = models.IntegerField()
     Deaths = models.IntegerField()
     Confirmed = models.IntegerField()
 
 
-# this is perfect
 class IndiaCensus(models.Model):
     StateUT = models.CharField(max_length=50)
     Population = models.IntegerField()

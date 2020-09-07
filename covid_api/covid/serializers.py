@@ -21,7 +21,9 @@ class HospitalBedsSerializer(serializers.ModelSerializer):
             'TotalPublicHealthFacilities',
             'NumPublicBeds',
             'NumRuralHospitals',
-            'NumRuralBeds'
+            'NumRuralBeds',
+            'NumUrbanHospitals',
+            'NumUrbanBeds'
         )
 
 
@@ -43,7 +45,8 @@ class IndividualDetailsSerializer(serializers.ModelSerializer):
             'detected_district',
             'StateUT',
             'nationality',
-            'current_status'
+            'current_status',
+            'notes'
         )
 
 
@@ -56,7 +59,15 @@ class TestingDetailsSerializer(serializers.ModelSerializer):
 class IndiaCensusSerializer(serializers.ModelSerializer):
     class Meta:
         model = IndiaCensus
-        fields = ('StateUT', 'Population', 'Ruralpopulation', 'Urbanpopulation', 'Area', 'Density', 'GenderRatio')
+        fields = (
+            'StateUT',
+            'Population',
+            'Ruralpopulation',
+            'Urbanpopulation',
+            'Area',
+            'Density',
+            'GenderRatio'
+        )
 
 
 class Covid19IndiaSerializer(serializers.ModelSerializer):
@@ -66,8 +77,6 @@ class Covid19IndiaSerializer(serializers.ModelSerializer):
             'Date',
             'Time',
             'StateUT',
-            'ConfirmedIndianNational',
-            'ConfirmedForeignNational',
             'Cured',
             'Deaths',
             'Confirmed'
