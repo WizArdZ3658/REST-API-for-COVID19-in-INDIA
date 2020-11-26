@@ -16,3 +16,16 @@
  * Perform transformations.
  * It will create each object (row by row) and then save it in the database.
  * Databse used is SQLite (because of small application).
+
+## Technology Stack
+##### Languages :-
+Python, Git
+
+##### Frameworks, Libraries and Tools:-
+Django, Django-REST-Framework, Pandas, Numpy
+
+##### Databases:-
+SQLite
+
+##### Environment:-
+Windows(my PC)
