@@ -19,10 +19,10 @@
 
 ## Technology Stack
 ##### Languages :-
-Python, Git
+Python
 
 ##### Frameworks, Libraries and Tools:-
-Django, Django-REST-Framework, Pandas, Numpy
+Django, Django-REST-Framework, Pandas, Numpy, Git
 
 ##### Databases:-
 SQLite, Postgresql
